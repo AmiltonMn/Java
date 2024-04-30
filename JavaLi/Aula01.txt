@@ -1,0 +1,5 @@
+Linguagem Compilada: Código é mandado para um programa (compilador) e esse código é "traduzido" para binário.
+Vantagem: Mais rápida para o cliente, mais segura.
+
+Linguagem Interpretada: Outro programa lê o código e faz ações de acordo com sua intepretação do código-fonte. 
+Vantagem: Mais versátil, mais rápido para o desenvolvedor (testes).
