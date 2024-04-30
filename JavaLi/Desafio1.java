@@ -1,4 +1,5 @@
-// import java.lang.reflect.Array;
+import java.util.Random;
+
 public class Desafio1 {
     public static void main(String[] args)
     {
@@ -29,13 +30,16 @@ public class Desafio1 {
     }
     static int[] decompact(int[] originalData)
     {
-        int j = 0;
         int[] descompactado = new int[originalData.length*2];
+        int j = 0;
+
+        Random random = new Random(); // Criando a struct do random para melhor aproximação do número real descompactado
+
         for(int i = 0;i < originalData.length; i ++)
         {
-            descompactado[j] = originalData[i] & 240;
+            descompactado[j] = originalData[i] & 240 + (random.nextInt(15));
             j ++;
-            descompactado[j] = (originalData[i] & 15) << 4;
+            descompactado[j] = (originalData[i] & 15) << 4 + (random.nextInt(15));
             j ++;
         }
         return descompactado;
