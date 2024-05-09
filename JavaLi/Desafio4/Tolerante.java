@@ -8,41 +8,39 @@ public class Tolerante extends Pessoa
     @Override
     Boolean decisao()
     {
-        if (flag)
-        {
-            raiva++;
-            paciencia --;
-            flag = false;
-            escolha = true;
-        }
-        else
-        {
-            escolha = true;
-        }
         if (raiva == 3)
         {
-            escolha = false;
             paciencia ++;
             if (paciencia == 3)
             {
                 raiva = 0;
             }
+            return false;
+        } else {
+            if (flag)
+            {
+                raiva ++;
+                paciencia --;
+                flag = false;
+                moedas --;
+                return true;
+            } else {
+                moedas --;
+                return true;
+            }
         }
-        
-        if (escolha)
-        {
-            moedas --;
-        }
-        
-        return escolha;
-    }
-    
-    public Boolean getFlag() {
-        return flag;
-    }
-    
-    public void setFlag(Boolean flag) {
-        this.flag = flag;
     }
 
+    @Override
+    protected Tolerante clone()
+    {
+        if (getMoedas() >= 20)
+        {
+            addMoedas(-10);
+            return new Tolerante();
+        } else {
+            return null;
+        }
+    }
 }
+

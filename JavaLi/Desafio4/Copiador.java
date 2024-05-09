@@ -9,22 +9,25 @@ public class Copiador extends Pessoa
     {
         if (flag)
         {
-            escolha = false;
+            return false;
         }
         else
         {
-            escolha = true;
             moedas --;
+            return true;
         }
-        
-        return escolha;
     }
 
-    public Boolean getFlag() {
-        return flag;
+    @Override
+    protected Copiador clone()
+    {
+        if (getMoedas() >= 20)
+        {
+            addMoedas(-10);
+            return new Copiador();
+        } else {
+            return null;
+        }
     }
-    
-    public void setFlag(Boolean flag) {
-        this.flag = flag;
-    }
+
 }

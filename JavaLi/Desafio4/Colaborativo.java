@@ -6,6 +6,18 @@ public class Colaborativo extends Pessoa
     Boolean decisao()
     {
         moedas --;
-        return escolha = true;
-    }  
+        return true;
+    }
+
+    @Override
+    protected Colaborativo clone()
+    {
+        if (getMoedas() >= 20)
+        {
+            addMoedas(-10);
+            return new Colaborativo();
+        } else {
+            return null;
+        }
+    }
 }

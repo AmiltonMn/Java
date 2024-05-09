@@ -2,9 +2,10 @@ package Desafio4;
 
 abstract class Pessoa 
 {
-    protected Boolean escolha;
+    protected Boolean flag = false;
     protected int moedas = 10;
     abstract Boolean decisao();
+    protected abstract Pessoa clone();
     
     public int getMoedas() {
         return moedas;
@@ -12,12 +13,14 @@ abstract class Pessoa
     public void setMoedas(int moedas) {
         this.moedas = moedas;
     }
-
-    public Boolean getEscolha() {
-        return escolha;
+    public int addMoedas(int moedas){
+        return this.moedas += moedas;
     }
-
-    public void setEscolha(Boolean escolha) {
-        this.escolha = escolha;
+    
+    public Boolean setFlag(Boolean flag){
+        return this.flag = flag;
+    }
+    public Boolean getFlag(){
+        return flag;
     }
 }

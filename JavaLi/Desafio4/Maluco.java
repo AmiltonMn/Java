@@ -12,14 +12,24 @@ public class Maluco extends Pessoa
         int num = gerador.nextInt(2);
         if (num == 0)
         {
-            escolha = false;
+            return false;
         }
         else
         {
-            escolha = true;
             moedas --;
+            return true;
         }
+    }
 
-        return escolha;
+    @Override
+    protected Maluco clone()
+    {
+        if (getMoedas() >= 20)
+        {
+            addMoedas(-10);
+            return new Maluco();
+        } else {
+            return null;
+        }
     }
 }

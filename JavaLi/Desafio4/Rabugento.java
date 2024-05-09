@@ -9,22 +9,23 @@ public class Rabugento extends Pessoa
     {
         if (flag)
         {
-            escolha = false;
+            return false;
         }
         else
         {
-            escolha = true;
             moedas --;
+            return true;
         }
-        
-        return escolha;
     }
-
-    public Boolean getFlag() {
-        return flag;
-    }
-
-    public void setFlag(Boolean flag) {
-        this.flag = flag;
+    @Override
+    protected Rabugento clone()
+    {
+        if (getMoedas() >= 20)
+        {
+            addMoedas(-10);
+            return new Rabugento();
+        } else {
+            return null;
+        }
     }
 }
