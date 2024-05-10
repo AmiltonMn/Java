@@ -5,7 +5,6 @@ public class Colaborativo extends Pessoa
     @Override
     Boolean decisao()
     {
-        moedas --;
         return true;
     }
 

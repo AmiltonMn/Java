@@ -22,10 +22,8 @@ public class Tolerante extends Pessoa
                 raiva ++;
                 paciencia --;
                 flag = false;
-                moedas --;
                 return true;
             } else {
-                moedas --;
                 return true;
             }
         }

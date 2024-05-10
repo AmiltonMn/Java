@@ -27,10 +27,11 @@ public class Lista
             }
             lista = copy;
         }
+        value.setIndice(size);
         lista[size-1] = value;
     }
 
-    int morte()
+    int morte(int rodadas, Lista Mortos)
     {
         int mortes = 0;
         Pessoa morto;
@@ -38,10 +39,15 @@ public class Lista
         {
             if (lista[i].getMoedas() <= 0)
             {
+
                 morto = lista[i];
+                morto.setRodadaMorte(rodadas);
+                Mortos.add(morto);
+
                 lista[i] = lista[size-1];
                 lista[size-1] = morto;
                 lista[size-1] = null;
+
                 size --;
                 mortes ++;
             }

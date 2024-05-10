@@ -6,6 +6,7 @@ public class Main
 {
     static Mundo jogo =  new Mundo();
     static Lista Planeta = new Lista();
+    static Lista Mortos =  new Lista();
     public static void main(String[] args) 
     {
         int limite = 0;
@@ -13,7 +14,7 @@ public class Main
         
         // * Colaborativos
 
-        limite = 0;
+        limite = 500;
         
         for (int i = 0; i < limite; i++)
         {
@@ -23,7 +24,7 @@ public class Main
         
         // * Trapaceiros
  
-        limite = 1;
+        limite = 0;
         
         for (int i = 0; i < limite; i ++)
         {
@@ -33,7 +34,7 @@ public class Main
 
         // * Rabugentos
 
-        limite = 499;
+        limite = 0;
 
         for (int i = 0; i < limite; i ++)
         {
@@ -71,7 +72,7 @@ public class Main
             Planeta.add(Humano);
         }
 
-        jogo.rodadas(40, Planeta);
+        jogo.rodadas(1000, Planeta, Mortos);
         scanner.close();
         }   
 }

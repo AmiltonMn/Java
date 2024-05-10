@@ -13,7 +13,6 @@ public class Copiador extends Pessoa
         }
         else
         {
-            moedas --;
             return true;
         }
     }

@@ -16,7 +16,6 @@ public class Maluco extends Pessoa
         }
         else
         {
-            moedas --;
             return true;
         }
     }
