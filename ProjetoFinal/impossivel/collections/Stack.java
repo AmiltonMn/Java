@@ -1,6 +1,11 @@
 package impossivel.collections;
 
-public class Stack <T> extends Size
+import impossivel.Stream;
+import impossivel.iterators.Iterable;
+import impossivel.iterators.Iterator;
+import impossivel.iterators.StackIterator;
+
+public class Stack <T> extends Size implements Iterable<T>
 {
     private T[] stack;
     private Integer size = 0;
@@ -40,5 +45,22 @@ public class Stack <T> extends Size
     {
         stack[size] = null;
         size --;
+    }
+
+    public T get(int index)
+    {
+        return stack[index];
+    }
+
+    @Override
+    public Iterator<T> iterator() 
+    {
+        return new StackIterator<>(this);
+    }
+
+    @Override
+    public Stream<T> stream() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'stream'");
     }
 }

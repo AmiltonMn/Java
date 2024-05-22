@@ -1,23 +1,23 @@
 package impossivel.iterators;
 
 import impossivel.Exceptions.ErrorProgrammer;
-
 import impossivel.collections.Node;
 
-public class LinkedListIterator<T> implements Iterator<T> 
-{
-    Node<T> next = null;
+public class QueueIterator<T> implements Iterator<T> {
 
-    public LinkedListIterator(Node<T> first) 
+    Node<T> next = null;
+    
+    public QueueIterator(Node<T> first)
     {
         this.next = first;
     }
-
+    
     @Override
-    public T next() throws ErrorProgrammer 
+    public T next() throws ErrorProgrammer
     {
-        if (next == null)
+        if (next == null){
             throw new ErrorProgrammer();
+        }
 
         T value = next.getValue();
 
@@ -25,10 +25,11 @@ public class LinkedListIterator<T> implements Iterator<T>
 
         return value;
     }
-
+    
     @Override
     public boolean hasNext() 
     {
         return next != null;
-    }   
+    }
+    
 }

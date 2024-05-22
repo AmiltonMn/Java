@@ -1,8 +1,8 @@
 package impossivel.collections;
 
-abstract class List<T> extends Size
+public abstract class List<T> extends Size
 {
-    abstract T get(int index);
-    abstract void set(int index, T value);
-    abstract void add(T value);
+    public abstract T get(int index);
+    public abstract void set(int index, T value);
+    public abstract void add(T value);
 }

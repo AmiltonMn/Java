@@ -92,5 +92,15 @@ public class Hash <T> extends Size
         }
 
         return null;
-    } 
+    }
+
+    public LinkedList<noChave<T>> getIndex(int index)
+    {
+        return hash.get(index);
+    }
+
+    public int getCapacity()
+    {
+        return this.capacity;
+    }
 }

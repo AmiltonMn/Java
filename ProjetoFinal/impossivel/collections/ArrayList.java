@@ -59,9 +59,9 @@ public class ArrayList <T> extends List<T> implements Iterable<T>
     }
 
     @Override
-    public Iterator<T> iterator() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'iterator'");
+    public Iterator<T> iterator() 
+    {
+        return new ArrayListIterator<T>(this);
     }
 
     @Override
